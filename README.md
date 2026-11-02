@@ -57,6 +57,7 @@ apt-get install p7zip-rar p7zip-full
 ### **process** (p) - выполняет обработку данных настройкам из файла (.json)
 
 - _--work-dir_ - путь к рабочему каталогу (по умолчанию: текущий каталог)
+- _--report-file_ - необязательный путь к JSON-отчету выполнения обработчиков; если отчет содержит ошибки, команда завершится с ненулевым кодом после сохранения отчета
 - _<Путь>_ - путь к файлу настроек (по умолчанию ./yardsettings.json)
 
 Пользователя и пароль портала 1С можно передать с помощью переменных среды:
@@ -73,7 +74,7 @@ apt-get install p7zip-rar p7zip-full
 #### Пример
 
 ```bat
-yard process --work-dir "c:\tmp" ".\examples\releases2templates.json"
+yard process --work-dir "c:\tmp" --report-file ".\tmp\execution-report.json" ".\examples\releases2templates.json"
 ```
 
 см. [Файл настроек](#jsonsettings)
